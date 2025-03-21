@@ -17,7 +17,7 @@ domReady(function () {
 
         if (decodeText.startsWith("http://") || decodeText.startsWith("https://")) {
             resultElement.innerHTML = `
-                Redirecting to: <a href='${decodeText}' target='_blank' id='qrLink'>${decodeText}</a>
+                <a href='${decodeText}' target='_blank' id='qrLink'>${decodeText}</a>
                 <button id="copy-link-btn">Copy Link</button>
                 <button id="share-link-btn">Share Link</button>
             `;
@@ -46,7 +46,7 @@ domReady(function () {
 
             isScanned = true;
         } else {
-            resultElement.innerHTML = `Your QR code is: <a href='http://${decodeText}' target='_blank'>${decodeText}</a>`;
+            resultElement.innerHTML = `Scanned Data: ${decodeText}`;
         }
     }
 
@@ -60,13 +60,18 @@ domReady(function () {
             let backCamera = devices.find(device => device.label.toLowerCase().includes('back'));
             let cameraId = backCamera ? backCamera.id : devices[0].id;
 
-            let htmlscanner = new Html5QrcodeScanner(
-                "my-qr-reader",
-                { fps: 10, qrbox: 250 },
-                false
+            let scanner = new Html5Qrcode("my-qr-reader");
+            scanner.start(
+                cameraId,
+                {
+                    fps: 10,
+                    qrbox: 250
+                },
+                onScanSuccess,
+                onScanError
             );
-
-            htmlscanner.render(onScanSuccess, onScanError, cameraId);
+        } else {
+            console.log("No camera found");
         }
     }).catch(err => console.log(err));
 });
