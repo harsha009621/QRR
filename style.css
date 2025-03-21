@@ -1,0 +1,117 @@
+/* style.css file*/
+
+
+*{
+    margin: 0%;
+    padding:0%;
+    box-sizing: 0;
+}
+body {
+    display: flex;
+    justify-content: right;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    text-align: center;
+    background: rgba(81, 101, 255, 0.66);
+}
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 5px;
+    margin-top: 5%;
+}
+
+.container h1 {
+    color: #ffffff;
+    padding-bottom: 40px;
+    margin-top: 0%;
+    font-family: monospace;
+}
+
+.section {
+
+    background-color: #ffffff;
+    padding: 80px 50px;
+    border: 1.5px solid #b2b2b2;
+    border-radius: 0.25em;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
+}
+.contact-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #000000;
+    }  
+#my-qr-reader {
+    padding: 20px !important;
+    border: 1.5px solid #b2b2b2 !important;
+    border-radius: 8px;
+}
+
+#my-qr-reader img[alt="Info icon"] {
+    display: none;
+}
+
+#my-qr-reader img[alt="Camera based scan"] {
+    width: 100px !important;
+    height: 100px !important;
+}
+
+button {
+    padding: 10px 20px;
+    border: 1px solid #b2b2b2;
+    outline: none;
+    border-radius: 0.25em;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: #0f5b0fad;
+    transition: 0.3s background-color;
+}
+
+button:hover {
+    background-color: #008000;
+}
+
+#html5-qrcode-anchor-scan-type-change {
+    text-decoration: none !important;
+    color: #1d9bf0;
+}
+
+video {
+    width: 100% !important;
+    border: 1px solid #b2b2b2 !important;
+    border-radius: 0.25em;
+}
+#result{
+    color:red;
+    
+}
+#copy-link-btn, #share-link-btn {
+    padding: 10px 20px;
+    border: 1px solid #b2b2b2;
+    outline: none;
+    border-radius: 0.25em;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: #0f5b0fad;
+    transition: 0.3s background-color;
+}
+
+#copy-link-btn:hover, #share-link-btn:hover {
+    background-color: #008000;
+}
+.bar {
+    background-color: rgb(255, 252, 252);
+}
+
+
+
